@@ -1,0 +1,112 @@
+#hero-text {
+	display: flex;
+	flex-direction: column;
+	text-align: center;
+	margin-top: 2rem;
+
+	& img {
+		width: 2.5rem;
+		height: 2.5rem;
+
+		&.img-1 {
+			transform: rotate(18deg);
+		}
+
+		&.img-2 {
+			transform: rotate(-64deg);
+		}
+
+		&.img-3 {
+			transform: rotate(-32deg);
+		}
+	}
+
+	& h2 {
+		padding-block: 0.8rem;
+	}
+
+	& div {
+		justify-content: space-between;
+	}
+}
+
+@media (width >= 80em) {
+	#hero-text {
+		& .highlight-1 {
+			color: rgba(226, 231, 233, 0.5);
+			transition: color 1s ease;
+		}
+
+		& .highlight-2 {
+			color: rgba(226, 231, 233, 0.5);
+			transition: color 1s 0.8s ease;
+		}
+
+		& .highlight-3 {
+			color: rgba(226, 231, 233, 0.5);
+			transition: color 1s 1.6s ease;
+		}
+
+		&:hover {
+			& .img-1 {
+				animation: fadeIn 1s ease forwards;
+			}
+			& .img-2 {
+				animation: fadeIn 1s 0.6s ease forwards;
+			}
+			& .img-3 {
+				animation: fadeIn 1s 1.2s ease forwards;
+			}
+
+			& .highlight-1 {
+				color: rgba(226, 231, 233);
+				& b {
+					animation: highlight 1s ease forwards;
+				}
+			}
+
+			& .highlight-2 {
+				color: rgba(226, 231, 233);
+				& b {
+					animation: highlight 1s 0.5s ease forwards;
+				}
+			}
+
+			& .highlight-3 {
+				color: rgba(226, 231, 233);
+				& b {
+					animation: highlight 1s 1s ease forwards;
+				}
+			}
+		}
+
+		& img {
+			width: 2.5rem;
+			height: 2.5rem;
+			opacity: 0;
+		}
+
+		& div {
+			padding-inline: 7rem;
+		}
+	}
+}
+
+@keyframes fadeIn {
+	to {
+		opacity: 1;
+	}
+}
+
+@keyframes highlight {
+	to {
+		color: var(--blue-light);
+	}
+}
+
+/* @keyframes highlight {
+	100% {
+		color: var(--blue-light);
+		opacity: 1;
+	}
+} */

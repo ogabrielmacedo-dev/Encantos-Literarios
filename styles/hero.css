@@ -1,0 +1,62 @@
+#hero {
+	height: 100vh;
+	& .background {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100vh;
+		background-image: url("../assets/hero-background.png");
+		background-position: center;
+		background-size: cover;
+		background-color: var(--shape-background);
+		opacity: 0;
+		animation: fadeInBackground 1s ease forwards;
+		animation-delay: 0.5s; /* espera 1 segundo antes de começar */
+		z-index: -1;
+	}
+
+	& > div:nth-child(2) {
+		position: relative;
+		& .navbar {
+			width: 100%;
+			margin-top: 2rem;
+			justify-content: space-between;
+		}
+
+		& .main-text {
+			text-align: center;
+			margin-top: 3rem;
+
+			& > p {
+				margin-top: 1rem;
+				max-width: 35.5rem;
+				align-self: center;
+			}
+		}
+	}
+}
+
+@keyframes fadeInBackground {
+	to {
+		opacity: 1;
+	}
+}
+
+@media (width >= 80em) {
+	#hero {
+		& > div:nth-child(2) {
+			& .navbar {
+				margin-top: 4rem;
+			}
+
+			& .main-text {
+				margin-top: 10.25rem;
+			}
+
+			& > p {
+				margin-top: 2rem;
+			}
+		}
+	}
+}
