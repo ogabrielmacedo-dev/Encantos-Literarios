@@ -90,7 +90,8 @@
 
 	@media (width >= 80em) {
 		& .book-kit-wrapper {
-			padding-block: 10rem;
+			padding-top: 8rem;
+			padding-bottom: 10rem;
 			&:hover {
 				& #bookmark-yellow {
 					transform: translateX(150%) translateY(-25%) rotate(10deg);
