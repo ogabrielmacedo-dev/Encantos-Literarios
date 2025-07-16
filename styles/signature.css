@@ -1,4 +1,175 @@
 #signature {
 	padding-block: 6rem;
-	background-color: red;
+	background: var(--shape-base);
+	background: radial-gradient(
+			circle,
+			var(--shape-base) 0%,
+			rgba(4, 7, 15, 0) 66%
+		),
+		url(../assets/pricing-background.png);
+
+	background-repeat: no-repeat;
+	background-size: cover;
+	width: 100%;
+
+	& > .container {
+		flex-direction: column;
+		width: 100%;
+
+		& h2 {
+			align-self: center;
+			font-weight: 700;
+		}
+
+		& .cards-wrapper {
+			margin-top: 5rem;
+			overflow-x: scroll;
+			gap: 1rem;
+			overflow: visible;
+			width: 100%;
+
+			&:has(.card.card-secondary:hover) {
+				.card.card-primary {
+					background-color: var(--shape-base);
+				}
+
+				.card.card-secondary:hover {
+					background-color: var(--shape-hover);
+				}
+			}
+
+			& .card {
+				width: 18rem;
+				height: 25rem;
+				background-color: var(--shape-base);
+				border-radius: 1.5rem;
+				padding: 2rem;
+				position: relative;
+				overflow: visible;
+				transition: background-color 0.5s ease;
+
+				&.card-primary {
+					background-color: var(--shape-hover);
+
+					& .card-header > p {
+						color: var(--blue-light);
+					}
+				}
+
+				& img.bunny {
+					position: absolute;
+					left: 20;
+					top: -50px;
+				}
+
+				& img.icon1 {
+					width: 20px;
+					height: 20px;
+					position: absolute;
+					left: -8px;
+					top: -24px;
+				}
+
+				& img.icon2 {
+					width: 8px;
+					height: 8px;
+					position: absolute;
+					left: -16px;
+					top: 0px;
+				}
+
+				& img.icon3 {
+					width: 8px;
+					height: 8px;
+					position: absolute;
+					right: -2%;
+					bottom: -2%;
+				}
+
+				& img.icon4 {
+					width: 20px;
+					height: 20px;
+					position: absolute;
+					right: -10%;
+					bottom: 2%;
+				}
+
+				& .card-header {
+					display: flex;
+					justify-content: space-between;
+					align-items: center;
+
+					& p {
+						color: var(--pink-light);
+					}
+
+					& span {
+						background-color: var(--shape-stroke);
+						padding: 0.5rem 0.8rem;
+						border-radius: 1.5rem;
+						font-size: var(--fs-tag);
+						text-transform: uppercase;
+					}
+				}
+
+				& .card-price {
+					margin-top: 1rem;
+
+					& h1 {
+						font-size: 2.5rem;
+						font-weight: bold;
+						display: flex;
+						align-items: baseline;
+						gap: 0.25rem;
+					}
+
+					& .currency {
+						font-size: 1.2rem;
+						vertical-align: baseline;
+					}
+
+					& .month {
+						font-size: 1rem;
+					}
+
+					& p {
+						margin-top: 0.5rem;
+						font-size: var(--body-sm);
+						color: var(--text-label);
+					}
+				}
+
+				& .card-options {
+					margin-top: 20%;
+					width: max-content;
+					min-height: 8rem;
+
+					justify-content: space-around;
+
+					& div.option {
+						align-items: center;
+
+						& img {
+							width: 14px;
+							height: 14px;
+							margin-right: 0.5rem;
+						}
+
+						& p {
+							font-size: var(--fs-body-xs);
+							color: var(--text-body);
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+@media (width >= 80em) {
+	#signature {
+		& .cards-wrapper {
+			justify-content: center;
+		}
+	}
 }

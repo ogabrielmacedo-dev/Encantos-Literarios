@@ -5,7 +5,7 @@
 		top: 0;
 		left: 0;
 		width: 100%;
-		height: 100vh;
+		height: 80vh;
 		background-image: url("../assets/hero-background.png");
 		background-position: center;
 		background-size: cover;
@@ -45,6 +45,10 @@
 
 @media (width >= 80em) {
 	#hero {
+		& .background {
+			height: 100vh;
+		}
+
 		& > div:nth-child(2) {
 			& .navbar {
 				margin-top: 4rem;
