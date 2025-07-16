@@ -32,6 +32,7 @@
 
 @media (width >= 80em) {
 	#hero-text {
+		margin-top: 5rem;
 		& .highlight-1 {
 			color: rgba(226, 231, 233, 0.5);
 			transition: color 1s ease;

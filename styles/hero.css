@@ -9,7 +9,6 @@
 		background-image: url("../assets/hero-background.png");
 		background-position: center;
 		background-size: cover;
-		background-color: var(--shape-background);
 		opacity: 0;
 		animation: fadeInBackground 1s ease forwards;
 		animation-delay: 0.5s; /* espera 1 segundo antes de começar */
