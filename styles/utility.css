@@ -26,10 +26,6 @@
 	display: block;
 }
 
-.hidden {
-	visibility: initial;
-}
-
 /* Padding */
 
 .px-1 {
