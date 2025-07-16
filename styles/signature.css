@@ -22,10 +22,12 @@
 		}
 
 		& .cards-wrapper {
+			padding: 4rem 1rem;
 			margin-top: 5rem;
 			gap: 1rem;
-			overflow: scroll;
-			width: 100%;
+			overflow-x: auto; /* permite scroll horizontal */
+			scroll-snap-type: x mandatory; /* (opcional) para travar os cards */
+			-webkit-overflow-scrolling: touch;
 			scrollbar-width: none; /* Firefox */
 			-ms-overflow-style: none;
 
@@ -174,49 +176,55 @@
 @media (width >= 80em) {
 	#signature {
 		width: 100%;
-		& .cards-wrapper {
-			display: flex;
-			justify-content: center;
-			gap: 0;
 
-			&:hover {
-				& .card {
-					transform: scale(1.05);
-					width: max-content;
+		& > .container {
+			overflow: visible;
+			& .cards-wrapper {
+				display: flex;
+				justify-content: center;
+				gap: 0;
+				overflow: visible;
+				scroll-snap-type: none;
+
+				&:hover {
+					& .card {
+						transform: scale(1.05);
+						width: max-content;
+					}
+
+					& .card.card-primary {
+						transform: translatey(-20px);
+					}
+
+					& .card.card-secondary:first-of-type {
+						margin-right: 0;
+						transform: rotate(-10deg);
+					}
+
+					.card.card-secondary:last-of-type {
+						margin-left: 0;
+						transform: rotate(10deg);
+					}
+				}
+
+				& .card.card-secondary {
+					z-index: 1;
+					position: relative;
+					transition: all 0.6s ease;
 				}
 
 				& .card.card-primary {
-					transform: translatey(-20px);
+					z-index: 2;
+					transition: all 0.6s ease;
 				}
 
-				& .card.card-secondary:first-of-type {
-					margin-right: 0;
-					transform: rotate(-10deg);
+				.card.card-secondary:first-of-type {
+					margin-right: -48%;
 				}
 
 				.card.card-secondary:last-of-type {
-					margin-left: 0;
-					transform: rotate(10deg);
+					margin-left: -48%;
 				}
-			}
-
-			& .card.card-secondary {
-				z-index: 1;
-				position: relative;
-				transition: all 0.6s ease;
-			}
-
-			& .card.card-primary {
-				z-index: 2;
-				transition: all 0.6s ease;
-			}
-
-			.card.card-secondary:first-of-type {
-				margin-right: -48%;
-			}
-
-			.card.card-secondary:last-of-type {
-				margin-left: -48%;
 			}
 		}
 	}
