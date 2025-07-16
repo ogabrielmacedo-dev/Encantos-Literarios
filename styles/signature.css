@@ -168,8 +168,51 @@
 
 @media (width >= 80em) {
 	#signature {
+		width: 100%;
 		& .cards-wrapper {
+			display: flex;
 			justify-content: center;
+			gap: 0;
+
+			&:hover {
+				& .card {
+					transform: scale(1.05);
+					width: max-content;
+				}
+
+				& .card.card-primary {
+					transform: translatey(-20px);
+				}
+
+				& .card.card-secondary:first-of-type {
+					margin-right: 0;
+					transform: rotate(-10deg);
+				}
+
+				.card.card-secondary:last-of-type {
+					margin-left: 0;
+					transform: rotate(10deg);
+				}
+			}
+
+			& .card.card-secondary {
+				z-index: 1;
+				position: relative;
+				transition: all 0.6s ease;
+			}
+
+			& .card.card-primary {
+				z-index: 2;
+				transition: all 0.6s ease;
+			}
+
+			.card.card-secondary:first-of-type {
+				margin-right: -48%;
+			}
+
+			.card.card-secondary:last-of-type {
+				margin-left: -48%;
+			}
 		}
 	}
 }

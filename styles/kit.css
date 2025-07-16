@@ -28,7 +28,6 @@
 	& .book-kit-wrapper {
 		display: flex;
 		width: 100%;
-		position: relative;
 		justify-content: center;
 		padding-block: 5rem;
 		background: radial-gradient(
